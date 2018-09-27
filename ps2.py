@@ -29,7 +29,7 @@ k1,k2,k3 = list(map(int,input().split()))
 #get string
 msg = input()
 msg_list = list(msg)
-print(msg_list)
+#print(msg_list)
 
 #now compair g1 in string and copy similaar char into s1
 for i in range(0,len(msg)):
@@ -66,12 +66,12 @@ for i in range(0,len(msg)+1):
 		msg_list[i]=c3[r]
 		r+=1	
 
-print(msg_list)
+#print(msg_list)
 
 for i in msg_list[:]:
 	print (i, end ='')
 
-print(\n)
+print("")
 
 
 
