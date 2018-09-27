@@ -1,0 +1,228 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{newunicodechar}
+\newunicodechar{ﬁ}{fi}
+\newunicodechar{ﬀ}{ff}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\renewcommand{\baselinestretch}{1.5}
+\usetikzlibrary{shapes,arrows,chains}
+\usepackage{tikz-cd}
+%\usetikzlibrary{snakes}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{url}   
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{Cstyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=Cstyle}   
+\usepackage{xcolor}
+\begin{document}
+\begin{center}
+\textbf{Assignment-8 \\
+\vspace{5mm}
+ELP - 718 Telecom Software Laboratory \\
+\vspace{2mm}
+Priyanshu Aggarwal \\
+2018JTM2247 \\
+2018-2020} \\
+\vspace{10mm}
+ Assignment on Python Basics and Github\\
+\vspace{30mm}
+\includegraphics[scale=0.5]{iitlogo.png} \\
+\vspace{10mm}
+Bharti School Of \\
+Telecommunication Technology and Management \\
+IIT Delhi \\
+India \\
+September 27, 2018
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\end{center}
+
+\section{\large{Problem Statement-1}}
+\subsection{Problem Statement-1}
+IT Delhi, has just got the strongest computer. The professors in charge wants to check the computational capacity of the computer. So, they decided to create the problem which is to be given as an assignment to students. Can you help the professor to check the computation capability of the computer?\\
+A valid cross is defined here as the two regions (horizontal and vertical) of equal lengths crossing over each other. These lengths must be odd, and the middle cell of its horizontal region must cross the middle cell of its vertical region.\\
+
+ \begin{figure}[h!]     
+       	\centering
+       	\vspace{-2mm}
+		\includegraphics[scale=.6]{prob1}
+		\vspace{-7mm}
+		\caption{\textit{In the diagram above, the blue crosses are valid and the orange ones are not valid. }}
+		\end{figure}
+		
+		Find the two largest valid crosses that can be drawn on smart cells in the grid, and return two integers denoting the dimension of the each of the two largest valid crosses. In the above diagrams, our largest crosses have dimension of 1,  5 and 9 respectively .\\
+\textbf{Note:}The two crosses cannot overlap, and the dimensions of each of the valid crosses should be maximal.\\
+	
+
+
+\subsection{Assumptions}
+  \textbf{Constraints}
+   \begin{itemize}
+   \item 2 <= n <= 105
+   \item 2 <= m <= 105
+   \end{itemize}
+
+\newpage
+  \subsection{Program Structure}
+  \begin{figure}[h!]     
+       	\centering
+       	\vspace{-2mm}
+		\includegraphics[scale=1]{flow1}
+		\vspace{-7mm}
+		\caption{\textit{Problem statement 1 flow chart}}
+		\end{figure}
+	
+\newpage		
+
+  
+     \subsection{Input and Output Format}
+     Input and output format.\\
+     \textbf{Input Format}\\
+     The first line contains two space-separated integers,  n and m. \\
+   Each of the next  lines n contains a string of  m characters where each character is either S (Smart) or D (Dull). These strings represent the rows of the grid. If the jth character in the ith  line is S, then  (i,j) is a  cell smart. Otherwise it's a  dull cell.\\  
+   
+\textbf{Output Format}\\
+   Find two valid crosses that can be drawn on smart cell of the grid, and return the dimension of both the crosses in the reverse sorted order(i.e. First Dimension should be the larger one and other should be smaller one).\\
+   
+   \textbf{Sample Input 0}\\
+   5 6\\
+SSSSSS\\
+SDDDSD\\
+SSSSSS\\
+SSDDSD\\
+SSSSSS\\
+
+\textbf{Sample Output}\\
+5 1
+ \newpage  
+ \subsection{Difficulties}
+  we are unable to get singel cahractert from input.
+ 
+        \subsection{Screenshots}
+      \begin{figure}[h!]     
+       	\centering
+       	\vspace{-2mm}
+		\includegraphics[scale=.45]{ps1}
+		\vspace{-7mm}
+		\caption{\textit{Problem statement 1 output}}
+		\end{figure}
+		
+	
+		
+
+        
+        
+\newpage        
+\section{\large{Problem Statement-2}}
+\subsection{Problem Statement-2}
+After, getting mix results of valid crosses, professors decided to test the computation abilities on one more problem. This time professors wanted to test the decryption capabilities of the computer.\\
+Encryption of  a message requires three keys, k1, k2, and k3. The 26 letters of English and underscore are divided in three groups,  [a-i] form one group, [j-r] a second group, and everything else ([s-z] and underscore) the third group. Within each group the letters are rotated left by ki positions in the message. Each group is rotated independently of the other two. Decrypting the message means doing a right rotation by ki positions within each group.\\
+
+
+
+\subsection{Assumptions}
+  \textbf{Constraints}
+   \begin{itemize}
+   \item 1 <= Length of the string <=150
+   \item 1<= ki <=150 (i=1,2,3)
+   \end{itemize}
+
+\newpage
+  \subsection{Program Structure}
+  \begin{figure}[h!]     
+       	\centering
+       	\vspace{-2mm}
+		\includegraphics[scale=1]{flow2}
+		\vspace{-7mm}
+		\caption{\textit{Problem statement 2 flow chart}}
+		\end{figure}
+\newpage		
+
+  
+     \subsection{Input and Output Format}
+     \textbf{Input Format}\\
+     All input strings comprises of only lowercase English alphabets and underscores(\_).\\
+     
+ 
+   
+   \textbf{Output Format}\\
+   For each encrypted message, the output is a single line containing the decrypted string.\\
+   
+   \textbf{Sample Input 1}\\
+   2 3 4\\
+   dikhtkor\_ey\_tec\_ocsusrsw\_ehas\_
+   \\
+   
+   \textbf{Sample Output 1}\\
+   hardwork\_is\_the\_key\_to\_success
+   
+   \newpage
+
+ \subsection{Difficulties}
+ Difficulties found to rotate the list.there is no inbuilt function.
+ 
+ \
+        \subsection{Screenshots}
+       \begin{figure}[h!]     
+       	\centering
+       	\vspace{-2mm}
+		\includegraphics[scale=.45]{ps2}
+		\vspace{-7mm}
+		\caption{\textit{Problem statement 2 output}}
+		\end{figure}
+		
+  \newpage 
+
+
+	
+		
+%add code
+\section{\large{Appendix}}
+\subsection{Code for ps1}
+\lstinputlisting[language=C]{ps1.py}]
+\newpage
+
+\subsection{Code for ps2}
+\lstinputlisting[language=C]{ps1.py}]
+\newpage
+
+ \nocite{*}
+
+\bibliographystyle{plain}
+\bibliography{jtm182247.bib}
+
+\end{document}
